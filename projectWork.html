@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>To Do List</title>
+	<link rel="stylesheet" type="text/css" href="todo.css">
+	<!-- <link rel="stylesheet"  href="css/font-awesome.min.css"> -->
+</head>
+<body>
+	<div class="container">
+  <h2>To Do List</h2>
+  <input type="text" id="newtask" placeholder="Title...">
+  <button onclick="newElement()" class="addBtn">ADD ITEMS</button>
+</div>
+<ul id="taskList">
+
+</ul>
+<script src="projectWork.js"></script>
+
+<script>
+
+window.onload = () =>{
+  let tasks = getTodoList()
+  for(let i = 0; i < tasks.todome.length; i++){
+    let task = tasks.todome[i]
+      createTodo(task.name, task.isCompleted)
+    }
+
+  }
+  
+ function createTodo(taskNameUl,
+    isCompleted = false){
+  let inputTask = document.getElementById('taskList')
+  let li = document.createElement('li')
+  let checkbox = document.createElement('input')
+  let del = document.createElement('button')
+  let createdDate = document.createElement('p')
+  let completedDate = document.createElement('span')
+  let timeWrapper = document.createElement('div')
+
+
+  createdDate.innerHTML = 'task created on' + new Date().toLocaleString()
+ 
+  del.innerHTML = 'x delete'
+  del.className = 'deleted'
+  checkbox.type = 'checkbox'
+  checkbox.className = 'check'
+
+
+  if(isCompleted){
+    checkbox.checked = true
+    li.classList.toggle('checked')
+    completedDate.innerHTML = 'task completed on'+ new Date().toLocaleString()
+
+  }
+ 
+  
+
+  checkbox.addEventListener('click', () => {
+      const status = toggleStatus(taskNameUl)
+      console.log("status:", status)
+      if(status === true) {
+        completedDate.innerHTML = 'task completed on'+ new Date().toLocaleString()
+      } else {
+        completedDate.innerHTML = ''
+      }
+
+      li.classList.toggle('checked')
+  })
+  
+
+ 
+  del.addEventListener('click', () => {
+    let  deleted = deleteStatus(taskNameUl)
+    if(deleted){
+      inputTask.removeChild(li)
+    }
+  })
+  li.innerHTML = taskNameUl 
+  li.appendChild(createdDate)
+  li.appendChild(completedDate)
+  li.appendChild(checkbox)
+  li.appendChild(del)
+  inputTask.appendChild(li)
+ }
+
+   
+  
+function newElement() {
+      let inputList = document.getElementById("newtask").value
+      if (inputList) {
+       let todoAdded = addTodo(inputList)
+       // alert(date)
+       if(todoAdded){
+        createTodo(inputList)
+       }
+      
+      }else if(inputList === ""){
+        alert('input some taks please!')
+        return false
+      }
+
+}
+  
+        
+
+</script>
+
+</body>
+</html>
