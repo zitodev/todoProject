@@ -39,8 +39,11 @@ window.onload = () =>{
   let completedDate = document.createElement('span')
   let timeWrapper = document.createElement('div')
 
-
-  createdDate.innerHTML = 'task created on' + new Date().toLocaleString()
+  let tasks = getTodoList()
+        for(let i = 0; i < tasks.todome.length; i++){
+    let todo = tasks.todome[i]
+      createdDate.innerHTML = 'task created on: ' + todo.date
+      }
  
   del.innerHTML = 'x delete'
   del.className = 'deleted'
@@ -48,11 +51,14 @@ window.onload = () =>{
   checkbox.className = 'check'
 
 
-  if(isCompleted){
+ if(isCompleted){
     checkbox.checked = true
     li.classList.toggle('checked')
-    completedDate.innerHTML = 'task completed on'+ new Date().toLocaleString()
-
+       let tasks = getTodoList()
+        for(let i = 0; i < tasks.todome.length; i++){
+    let todo = tasks.todome[i]
+        completedDate.innerHTML = 'task completed on: ' +todo.completionDate
+      }
   }
  
   
@@ -61,7 +67,13 @@ window.onload = () =>{
       const status = toggleStatus(taskNameUl)
       console.log("status:", status)
       if(status === true) {
-        completedDate.innerHTML = 'task completed on'+ new Date().toLocaleString()
+        let tasks = getTodoList()
+        for(let i = 0; i < tasks.todome.length; i++){
+    let todo = tasks.todome[i]
+        completedDate.innerHTML = 'task Date: ' + todo.completionDate
+
+        console.log(todo.completionDate)
+      }
       } else {
         completedDate.innerHTML = ''
       }
