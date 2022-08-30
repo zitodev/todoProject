@@ -11,10 +11,14 @@ div{
 
 }
 h2{
-	color: white;
+	color: black;
 	text-transform: uppercase;
 	text-shadow: 0 0 10px red ;
 	font-weight: bold;
+	background: white;
+	height: 50px;
+	padding: 15px 5px 0 5px;
+
 }
 #newtask{
 	border-radius: 10px;
