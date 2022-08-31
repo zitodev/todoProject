@@ -1,5 +1,5 @@
 div{
-	background-color: darkgreen;
+	background-color: rgb(2, 70, 75);
 	width: 50%;
 	border-radius: 5px;
 	text-align: center;
@@ -11,11 +11,11 @@ div{
 
 }
 h2{
-	color: black;
+	color: white;
 	text-transform: uppercase;
-	text-shadow: 0 0 10px red ;
+	text-shadow: 0 0 10px rgb(0, 255, 255) ;
 	font-weight: bold;
-	background: white;
+	/* background: white; */
 	height: 50px;
 	padding: 15px 5px 0 5px;
 
@@ -35,6 +35,18 @@ h2{
 	font-weight: bold;
 	font-style: italic;
 }
+
+ul{
+	margin-top: 0;
+	background-color: rgb(2, 70, 75);
+	width: 50%;
+	border-radius: 5px;
+	box-shadow: 0 0 10px green;
+	padding: 10px;
+	border: 5px solid white;
+	margin-left: 25%;
+}
+
 ul li{
 	cursor: pointer;
   position: relative;
@@ -78,14 +90,4 @@ p {
  	color: white;
   margin-left: 10px;
   
-}
-ul{
-	margin-top: 0;
-	background-color: darkgreen;
-	width: 50%;
-	border-radius: 5px;
-	box-shadow: 0 0 10px green;
-	padding: 10px;
-	border: 5px solid white;
-	margin-left: 25%;
 }
