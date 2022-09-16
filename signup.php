@@ -7,14 +7,16 @@
         $password = $_POST['password'];
         $confimr_password = $_POST['confirmPassword'];
 
-        if(!empty($password)) {
-            if($password === $confimr_password){
+        if(!empty($password) && $password == $confimr_password) {
+            if(strlen($password) >= 5 ){
                 $query = "INSERT INTO users(username, password) VALUES('$user_name', '$password');";
                 $q = $conn->query($query);
-                header('Location:../projectWork.php?success=registractionsuccessful');
+                header('Location:./projectWork.php?success=registractionsuccessful');
             }else{
-                echo 'password does not match';
-            }
+                header('Location:./signup.php?error=passwordmustbeabovefivedigits');
+                
+        }
+    }
             
             // $query = "INSERT INTO users(username, password) VALUES(?, ?);";
            
