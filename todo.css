@@ -90,7 +90,8 @@ ul{
 	margin-left: 25%;
 }
 p a{
-	color: #ffffff;
+	color: blue;
+	text-decoration: none;
 }
 .logDiv{
     width: 100%;
