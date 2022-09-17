@@ -9,9 +9,10 @@
 
         if(!empty($password) && $password == $confimr_password) {
             if(strlen($password) >= 5 ){
-                $query = "INSERT INTO users(username, password) VALUES('$user_name', '$password');";
+                $password_1 = md5($password);
+                $query = "INSERT INTO users(username, password) VALUES('$user_name', '$password_1');";
                 $q = $conn->query($query);
-                header('Location:./projectWork.php?success=registractionsuccessful');
+                header('Location:./login.php?success=registractionsuccessful');
             }else{
                 header('Location:./signup.php?error=passwordmustbeabovefivedigits');
                 

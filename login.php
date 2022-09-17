@@ -1,4 +1,25 @@
+<?php 
+    require_once "includes/database.php";
 
+    if(isset($_POST['submit'])) {
+
+        $user_name = $_POST['username'];
+        $password = $_POST['password'];
+      if(!empty($user_name) && !empty($password)){
+        $password = md5($password);
+        $query = "SELECT * FROM users WHERE username = '$user_name' AND password = '$password'";
+        $p = $conn->query($query);
+        if(mysqli_num_rows($p) == 1){
+            header('Location:./projectWork.php?success=loginsuccessful');
+
+        }else{
+            header('Location:./login.php?error=invalidlogindetails');
+        }
+
+      }
+
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
