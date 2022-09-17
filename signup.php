@@ -21,7 +21,7 @@
             // $query = "INSERT INTO users(username, password) VALUES(?, ?);";
            
         }
-    }
+    
 ?>
 
 <html lang="en">

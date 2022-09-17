@@ -70,7 +70,7 @@ window.onload = () =>{
         let tasks = getTodoList()
         for(let i = 0; i < tasks.todome.length; i++){
     let todo = tasks.todome[i]
-        completedDate.innerHTML = 'task Date: ' + todo.completionDate
+        completedDate.innerHTML = 'task completed on: ' + todo.completionDate
 
         console.log(todo.completionDate)
       }
