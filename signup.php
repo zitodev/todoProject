@@ -7,17 +7,22 @@
         $password = $_POST['password'];
         $confimr_password = $_POST['confirmPassword'];
 
-        if(!empty($password) && $password == $confimr_password) {
-            if(strlen($password) >= 5 ){
-                $password_1 = md5($password);
-                $query = "INSERT INTO users(username, password) VALUES('$user_name', '$password_1');";
-                $q = $conn->query($query);
-                header('Location:./login.php?success=registractionsuccessful');
-            }else{
-                header('Location:./signup.php?error=passwordmustbeabovefivedigits');
-                
+        if(!empty($password)) {
+            
+            if(strlen($password) < 5 ){
+                $msg = 'password must be above five didgits';
+                return header("Location:./signup.php?error='$msg'");    
+            }
+
+            if($password != $confimr_password) {
+               return header('Location:./signup.php?error=passworddidntmatch'); 
+            }
+
+            $password_1 = md5($password);
+            $query = "INSERT INTO users(username, password) VALUES('$user_name', '$password_1');";
+            $q = $conn->query($query);
+            header('Location:./login.php?success=registractionsuccessful');
         }
-    }
             
             // $query = "INSERT INTO users(username, password) VALUES(?, ?);";
            

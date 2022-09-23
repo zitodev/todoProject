@@ -1,3 +1,8 @@
+<?php
+require_once "includes/database.php";
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +13,19 @@
 	<!-- <link rel="stylesheet"  href="css/font-awesome.min.css"> -->
 </head>
 <body>
+  <?php
+  session_start();
+  if($_SESSION['sessionuser']){
+    ?>
 	<div class="container">
-  <h2>To Do List</h2>
+  <h2><?php echo "Welcome,"." ".	$_SESSION['sessionuser']; ?> </h2>
+  <?php
+  }else{ echo"<h1> please login first.<h1>";
+    header("Location: login.php");
+  }
+  ?>
+  <h4 class="logout"><a href="logout.php">logout</a></h4>
+  <h3>To Do List</h3>
   <input type="text" id="newtask" placeholder="Title...">
   <button onclick="newElement()" class="addBtn">ADD ITEMS</button>
 </div>

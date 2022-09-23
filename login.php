@@ -9,8 +9,12 @@
         $password = md5($password);
         $query = "SELECT * FROM users WHERE username = '$user_name' AND password = '$password'";
         $p = $conn->query($query);
-        if(mysqli_num_rows($p) == 1){
+        if($row = mysqli_fetch_assoc($p)){
+            session_start();
+            $_SESSION['sessionId'] = $row['id'];
+        	$_SESSION['sessionuser'] = $row['username'];
             header('Location:./projectWork.php?success=loginsuccessful');
+
 
         }else{
             header('Location:./login.php?error=invalidlogindetails');
