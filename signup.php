@@ -1,5 +1,6 @@
 <?php 
     require_once "includes/database.php";
+   
 
     if(isset($_POST['submit'])) {
 
@@ -10,8 +11,8 @@
         if(!empty($password)) {
             
             if(strlen($password) < 5 ){
-                $msg = 'password must be above five didgits';
-                return header("Location:./signup.php?error='$msg'");    
+                $message = "password must be above five digits";
+                return header("Location:./signup.php?error='$message'");    
             }
 
             if($password != $confimr_password) {

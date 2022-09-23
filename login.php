@@ -13,7 +13,7 @@
             session_start();
             $_SESSION['sessionId'] = $row['id'];
         	$_SESSION['sessionuser'] = $row['username'];
-            header('Location:./projectWork.php?success=loginsuccessful');
+            header('Location:./projectWork.php');
 
 
         }else{

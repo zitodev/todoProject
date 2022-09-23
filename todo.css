@@ -115,8 +115,7 @@ p a{
     cursor: pointer;
 }
 h4 a{
-	text-align: right;
+	text-align: right !important;
 	color: red;
 	text-decoration: none;
-	background: red;
 }
