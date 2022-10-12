@@ -12,6 +12,7 @@ require_once "includes/database.php";
 	<link rel="stylesheet" type="text/css" href="todo.css">
 	<!-- <link rel="stylesheet"  href="css/font-awesome.min.css"> -->
 </head>
+
 <body>
   <?php
   session_start();
@@ -22,6 +23,7 @@ require_once "includes/database.php";
   <?php
   }else{
     header("Location: login.php");
+    echo "<li><input type='checkbox'><button>x delete</button><p></p><span></span></li>";
   }
   ?>
   <h4 class="logout"><a href="logout.php">Logout</a></h4>
@@ -45,8 +47,7 @@ window.onload = () =>{
 
   }
   
- function createTodo(taskNameUl,
-    isCompleted = false){
+ function createTodo(taskNameUl, isCompleted = false){
   let inputTask = document.getElementById('taskList')
   let li = document.createElement('li')
   let checkbox = document.createElement('input')
