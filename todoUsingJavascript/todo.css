@@ -1,0 +1,160 @@
+div{
+	background-color: darkgreen;
+	width: 50%;
+	border-radius: 5px;
+	text-align: center;
+	box-shadow: 0 0 10px green;
+	padding: 10px;
+	margin-bottom: 0;
+	border: 5px solid white;
+	margin-left: 25%;
+
+}
+h2{
+	color: black;
+	text-transform: uppercase;
+	text-shadow: 0 0 10px red ;
+	font-weight: bold;
+	background: white;
+	height: 50px;
+	padding: 15px 5px 0 5px;
+
+}
+#newtask{
+	border-radius: 10px;
+	box-shadow: 0 0 10px #666;
+	background-color: #f2f2f2;
+	width: 240px;
+  height: 20px;
+}
+.addBtn{
+	background: white;
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 10px;
+	font-weight: bold;
+	font-style: italic;
+}
+ul li{
+	cursor: pointer;
+  position: relative;
+ 	padding: 12px 8px 12px 40px;
+	list-style: none;
+	color: white;
+}
+.checked {
+  text-decoration: line-through;
+}
+.check{
+	margin: 0px 10px 0 10px;
+
+}
+.deleted{
+	background: red;
+	color: white;
+	border: none;
+	padding: 3px;
+	border-radius: 5px;
+	margin: 0 30px 20px 0;
+}
+
+
+span {
+	font-size: 9px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+ 	color: white;
+  margin-left: 10px;
+  
+}
+p {
+	font-size: 9px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+ 	color: white;
+  margin-left: 10px;
+  
+}
+ul{
+	margin-top: 0;
+	background-color: darkgreen;
+	width: 50%;
+	border-radius: 5px;
+	box-shadow: 0 0 10px green;
+	padding: 10px;
+	border: 5px solid white;
+	margin-left: 25%;
+}
+p a{
+	color: blue;
+	text-decoration: none;
+}
+.logDiv{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+#loginInput{
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 0 10px #666;
+    width: 240px;
+    height: 40px;
+    background-color: #f2f2f2;
+}
+#sub{
+    width: 240px;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+}
+h4 a{
+	text-align: right !important;
+	color: red;
+	text-decoration: none;
+}
+.delete a{
+    color: white;
+    background: red;
+    padding: 1px 6px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+form p{
+    color: red;
+    margin: 0px;
+}
+
+table{
+    width: 100%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+tr{
+    border: 1px solid black;
+}
+th{
+    font-size: 19px;
+    color: white;
+}
+th, td{
+    border: none;
+    height: 30px;
+    padding: 2px;
+}
+tr:hover{
+    background: white;
+}
+.task{
+    text-align: left;
+}
+td .displayDate{
+	font-size: 10px;
+	color: red;
+}

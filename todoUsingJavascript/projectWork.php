@@ -1,3 +1,8 @@
+<?php
+require_once "includes/database.php";
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +12,22 @@
 	<link rel="stylesheet" type="text/css" href="todo.css">
 	<!-- <link rel="stylesheet"  href="css/font-awesome.min.css"> -->
 </head>
+
 <body>
+  <?php
+  session_start();
+  if($_SESSION['sessionuser']){
+    ?>
 	<div class="container">
-  <h2>To Do List</h2>
+  <h2><?php echo "Welcome,"." ".	$_SESSION['sessionuser']; ?> </h2>
+  <?php
+  }else{
+    header("Location: login.php");
+    echo "<li><input type='checkbox'><button>x delete</button><p></p><span></span></li>";
+  }
+  ?>
+  <h4 class="logout"><a href="logout.php">Logout</a></h4>
+  <h3>To Do List</h3>
   <input type="text" id="newtask" placeholder="Title...">
   <button onclick="newElement()" class="addBtn">ADD ITEMS</button>
 </div>
@@ -29,8 +47,7 @@ window.onload = () =>{
 
   }
   
- function createTodo(taskNameUl,
-    isCompleted = false){
+ function createTodo(taskNameUl, isCompleted = false){
   let inputTask = document.getElementById('taskList')
   let li = document.createElement('li')
   let checkbox = document.createElement('input')
@@ -70,7 +87,7 @@ window.onload = () =>{
         let tasks = getTodoList()
         for(let i = 0; i < tasks.todome.length; i++){
     let todo = tasks.todome[i]
-        completedDate.innerHTML = 'task Date: ' + todo.completionDate
+        completedDate.innerHTML = 'task completed on: ' + todo.completionDate
 
         console.log(todo.completionDate)
       }
