@@ -20,12 +20,10 @@
             }
 
             $password_1 = md5($password);
-            $query = "INSERT INTO users(username, password) VALUES('$user_name', '$password_1');";
+            $query = "INSERT INTO users(username, password) VALUES('$user_name', '$password_1')";
             $q = $conn->query($query);
             header('Location:./login.php?success=registractionsuccessful');
         }
-            
-            // $query = "INSERT INTO users(username, password) VALUES(?, ?);";
            
         }
     
